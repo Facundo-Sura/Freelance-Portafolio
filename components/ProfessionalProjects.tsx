@@ -7,22 +7,22 @@ import { ExternalLink, Github } from "lucide-react";
 
 const proProjects = [
   {
-    title: "Plataforma E-commerce",
-    description: "Tienda online completa con pasarela de pagos, gestión de inventario y panel de administración personalizado.",
-    tags: ["Next.js", "Tailwind CSS", "Stripe", "Prisma"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
+    title: "Inmobiliaria Scotto",
+    description: "Sitio web deInmobiliaria local autogestionable de propiedades, vehiculos y subastas.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "node.js", "express", "cloudinary", "neon-db"],
+    image: "/inmobiliaria-scotto.jpg",
   },
   {
-    title: "SaaS de Gestión de Tareas",
-    description: "Aplicación para equipos remotos que permite organizar proyectos y mejorar la productividad en tiempo real.",
-    tags: ["React", "TypeScript", "Firebase", "Framer Motion"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
+    title: "Titanium Team - escuela de kickboxing y muay thai",
+    description: "Plataforma online para mostrar clases y competidores de la escuela de kickboxing y muay thai Titanium Team.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/titanium-team.jpg",
   },
   {
-    title: "Portal de Reservas Médicas",
-    description: "Sistema de gestión para clínicas con agenda inteligente, notificaciones automáticas y expedientes digitales.",
-    tags: ["Node.js", "Express", "MongoDB", "Redux"],
-    image: "https://images.unsplash.com/photo-1504868584819-f8e90526ef49?auto=format&fit=crop&q=80&w=1000",
+    title: "Estudio Juridico Sura",
+    description: "Sitio web de Estudio Juridico Sura, muestra información sobre el estudio, sus servicios y permite agendar citas.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "calendly"],
+    image: "/estudio-juridico-sura.jpg",
   },
 ];
 
