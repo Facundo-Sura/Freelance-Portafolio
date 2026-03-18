@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Inicio", href: "#home" },
   { name: "Quién soy", href: "#about" },
   { name: "Proyectos", href: "#projects" },
-  { name: "Académico", href: "#academic" },
   { name: "Tecnologías", href: "#tech" },
   { name: "Contacto", href: "#contact" },
 ];
@@ -37,9 +37,10 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold text-gradient"
+          className="text-2xl font-bold text-gradient flex"
         >
-          FreelancePort
+        <Image src="/logo.png" alt="Logo" width={50} height={50} />
+          Dev Facu Sura
         </motion.div>
 
         {/* Desktop Menu */}
