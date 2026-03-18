@@ -8,19 +8,19 @@ const socialLinks = [
   {
     name: "Gmail",
     icon: Mail,
-    href: "mailto:tuemail@gmail.com",
+    href: "mailto:facundomesura@gmail.com",
     color: "hover:bg-red-500/20 hover:text-red-500 hover:border-red-500/50",
   },
   {
     name: "Facebook",
     icon: Facebook,
-    href: "https://facebook.com/tucuenta",
+    href: "https://facebook.com/facundo-sura",
     color: "hover:bg-blue-600/20 hover:text-blue-600 hover:border-blue-600/50",
   },
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://instagram.com/tucuenta",
+    href: "https://www.instagram.com/facu_dev/",
     color: "hover:bg-pink-500/20 hover:text-pink-500 hover:border-pink-500/50",
   },
 ];
