@@ -6,6 +6,7 @@ import { AcademicProjects } from "@/components/AcademicProjects";
 import { Technologies } from "@/components/Technologies";
 import { Contact } from "@/components/Contact";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Technologies />
       <Contact />
       <WhatsAppButton />
+      <Analytics />
       
       <footer className="py-8 text-center text-muted border-t border-white/5">
         <p className="text-sm">
