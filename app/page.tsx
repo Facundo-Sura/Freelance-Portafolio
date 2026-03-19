@@ -5,6 +5,7 @@ import { ProfessionalProjects } from "@/components/ProfessionalProjects";
 import { Technologies } from "@/components/Technologies";
 import { Contact } from "@/components/Contact";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { SocialSidebar } from "@/components/SocialSidebar";
 import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Technologies />
       <Contact />
       <WhatsAppButton />
+      <SocialSidebar />
       <Analytics />
       
       <footer className="py-8 text-center text-muted border-t border-white/5">

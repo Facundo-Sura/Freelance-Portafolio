@@ -2,75 +2,97 @@
 
 import { Section } from "./Section";
 import { motion } from "framer-motion";
-import { Mail, Facebook, Instagram, Send } from "lucide-react";
-
-const socialLinks = [
-  {
-    name: "Gmail",
-    icon: Mail,
-    href: "mailto:facundomesura@gmail.com",
-    color: "hover:bg-red-500/20 hover:text-red-500 hover:border-red-500/50",
-  },
-  {
-    name: "Facebook",
-    icon: Facebook,
-    href: "https://facebook.com/facundo-sura",
-    color: "hover:bg-blue-600/20 hover:text-blue-600 hover:border-blue-600/50",
-  },
-  {
-    name: "Instagram",
-    icon: Instagram,
-    href: "https://www.instagram.com/facu_dev/",
-    color: "hover:bg-pink-500/20 hover:text-pink-500 hover:border-pink-500/50",
-  },
-];
+import { Calendar, Video, Send, Clock } from "lucide-react";
+import { useEffect } from "react";
 
 export function Contact() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <Section
       id="contact"
-      title="Contáctame"
-      subtitle="¿Tienes un proyecto en mente? Estoy listo para ayudarte a hacerlo realidad. Conéctate conmigo a través de mis redes sociales."
+      title="Hablemos de tu proyecto"
+      subtitle="Agenda una videoconferencia directamente en mi calendario. Elige el día y la hora que mejor te convenga."
       className="pb-40"
     >
-      <div className="flex flex-col items-center gap-12 max-w-2xl mx-auto">
+      <div className="grid lg:grid-cols-3 gap-12 items-start max-w-7xl mx-auto">
+        {/* Info Column */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-4"
+          className="space-y-8"
         >
-          <div className="inline-flex p-4 rounded-full bg-primary/10 text-primary mb-6 animate-pulse">
-            <Send size={40} />
+          <div className="space-y-4">
+            <h3 className="text-3xl font-bold">¿Por qué agendar?</h3>
+            <p className="text-muted text-lg leading-relaxed">
+              Una breve llamada de 15-30 minutos nos permitirá entender mejor tus necesidades y cómo puedo ayudarte a alcanzar tus objetivos.
+            </p>
           </div>
-          <h3 className="text-3xl font-bold">¡Hablemos de tu próximo gran paso!</h3>
-          <p className="text-muted text-lg">
-            Respondo en menos de 24 horas. Elige tu plataforma preferida:
-          </p>
+
+          <div className="space-y-6">
+            <div className="flex gap-4 items-start p-6 rounded-2xl bg-glass border border-white/10 hover:border-primary/50 transition-all group">
+              <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                <Video size={24} />
+              </div>
+              <div>
+                <h4 className="font-bold text-white">Videollamada</h4>
+                <p className="text-sm text-muted">A través de Google Meet o Zoom.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start p-6 rounded-2xl bg-glass border border-white/10 hover:border-primary/50 transition-all group">
+              <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                <Clock size={24} />
+              </div>
+              <div>
+                <h4 className="font-bold text-white">Horarios flexibles</h4>
+                <p className="text-sm text-muted">Adaptado a tu zona horaria.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start p-6 rounded-2xl bg-glass border border-white/10 hover:border-primary/50 transition-all group">
+              <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                <Send size={24} />
+              </div>
+              <div>
+                <h4 className="font-bold text-white">Respuesta rápida</h4>
+                <p className="text-sm text-muted">Confirmación inmediata vía email.</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
-          {socialLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className={`flex flex-col items-center gap-4 p-10 rounded-3xl bg-glass border border-white/10 transition-all duration-300 ${link.color} group`}
-            >
-              <div className="p-4 rounded-2xl bg-white/5 group-hover:bg-transparent transition-colors">
-                <link.icon size={36} strokeWidth={1.5} />
-              </div>
-              <span className="text-xl font-bold">{link.name}</span>
-            </motion.a>
-          ))}
-        </div>
+        {/* Calendly Column */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-2 w-full h-[650px] bg-glass rounded-3xl border border-white/10 overflow-hidden shadow-2xl relative"
+        >
+          {/* Calendly inline widget */}
+          <div 
+            className="calendly-inline-widget w-full h-full" 
+            data-url="https://calendly.com/facundomesura?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=3e1f73"
+            style={{ minWidth: '320px', height: '100%' }}
+          />
+          
+          {/* Overlay loading state (opcional) */}
+          <div className="absolute inset-0 -z-10 flex items-center justify-center bg-black/20">
+            <Calendar className="animate-pulse text-primary" size={48} />
+          </div>
+        </motion.div>
       </div>
     </Section>
   );
