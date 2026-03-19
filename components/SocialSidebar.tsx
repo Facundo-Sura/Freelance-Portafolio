@@ -76,7 +76,7 @@ export function SocialSidebar() {
         initial={{ height: 0 }}
         animate={{ height: 100 }}
         transition={{ delay: 0.8, duration: 1 }}
-        className="w-px bg-gradient-to-b from-primary/50 to-transparent mx-auto mt-2"
+        className="w-px bg-linear-to-b from-primary/50 to-transparent mx-auto mt-2"
       />
     </div>
   );
