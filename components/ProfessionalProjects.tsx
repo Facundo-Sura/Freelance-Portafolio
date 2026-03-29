@@ -3,6 +3,7 @@
 import { Section } from "./Section";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 
 const proProjects = [
@@ -11,18 +12,24 @@ const proProjects = [
     description: "Sitio web deInmobiliaria local autogestionable de propiedades, vehiculos y subastas.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "node.js", "express", "cloudinary", "neon-db"],
     image: "/inmobiliaria-scotto.jpg",
+    link: "https://inmobiliariascotto.com.ar/",
+    Github: "https://github.com/Facundo-Sura/Scotto-inmobiliaria.git"
   },
   {
     title: "Titanium Team - escuela de kickboxing y muay thai",
     description: "Plataforma online para mostrar clases y competidores de la escuela de kickboxing y muay thai Titanium Team.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     image: "/titanium-team.jpg",
+    link: "https://titanium-team.vercel.app/",
+    Github: "https://github.com/Facundo-Sura/Titanium-Team.git"
   },
   {
     title: "Estudio Juridico Sura",
     description: "Sitio web de Estudio Juridico Sura, muestra información sobre el estudio, sus servicios y permite agendar citas.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "calendly"],
     image: "/estudio-juridico-sura.jpg",
+    link: "https://estudio-juridico-sura.vercel.app/",
+    Github: "https://github.com/Facundo-Sura/estudio-juridico-sura.git"
   },
 ];
 
@@ -66,12 +73,12 @@ export function ProfessionalProjects() {
               </div>
 
               <div className="pt-4 flex items-center gap-4">
-                <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-muted hover:text-primary transition-all">
+                <Link href={project.link} target="_blank" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-muted hover:text-primary transition-all">
                   <ExternalLink size={18} />
-                </a>
-                <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-muted hover:text-primary transition-all">
+                </Link>
+                <Link href={project.Github} target="_blank" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-muted hover:text-primary transition-all">
                   <Github size={18} />
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
