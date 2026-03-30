@@ -1,13 +1,28 @@
 "use client";
 
+import type { ComponentType } from "react";
 import { Section } from "./Section";
 import { motion } from "framer-motion";
-import { 
-  Layout, 
-  Server, 
-  Cloud,
-  Database,
-} from "lucide-react";
+import { Layout, Server, Cloud, Database, Code2 } from "lucide-react";
+import { FaPython, FaDocker, FaNodeJs, FaAws, FaJava, FaDatabase } from "react-icons/fa";
+import {
+  SiReact,
+  SiVite,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiBootstrap,
+  SiTailwindcss,
+  SiBulma,
+  SiSpring,
+  SiExpress,
+  SiMysql,
+  SiPostgresql,
+  SiSupabase,
+  SiMongodb,
+  SiVercel,
+  SiRender,
+  SiGooglecloud,
+} from "react-icons/si";
 
 const techStack = [
   { name: "Frontend", icon: Layout, skills: ["React", "Vite", "Next.js", "Vue.js", "Bootstrap", "Tailwind", "Bulma"] },
@@ -15,6 +30,33 @@ const techStack = [
   { name: "Database", icon: Database, skills: ["MySQL", "PostgreSQL", "Neon", "Supabase", "MongoDB"] },
   { name: "DevOps", icon: Cloud, skills: ["Vercel", "Render", "AWS", "GCP", "Docker"] },
 ];
+
+type IconType = ComponentType<{ size?: string | number; className?: string; color?: string }>;
+
+const skillIcons: Record<string, IconType> = {
+  React: SiReact,
+  Vite: SiVite,
+  "Next.js": SiNextdotjs,
+  "Vue.js": SiVuedotjs,
+  Bootstrap: SiBootstrap,
+  Tailwind: SiTailwindcss,
+  Bulma: SiBulma,
+  Java: FaJava,
+  Spring: SiSpring,
+  "Node.js": FaNodeJs,
+  Express: SiExpress,
+  Python: FaPython,
+  MySQL: SiMysql,
+  PostgreSQL: SiPostgresql,
+  Neon: FaDatabase,
+  Supabase: SiSupabase,
+  MongoDB: SiMongodb,
+  Vercel: SiVercel,
+  Render: SiRender,
+  AWS: FaAws,
+  GCP: SiGooglecloud,
+  Docker: FaDocker,
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -58,11 +100,18 @@ export function Technologies() {
             <h3 className="text-2xl font-bold mb-6 group-hover:text-primary transition-colors">{tech.name}</h3>
             
             <div className="flex flex-wrap justify-center gap-3">
-              {tech.skills.map((skill) => (
-                <span key={skill} className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-muted">
-                  {skill}
-                </span>
-              ))}
+              {tech.skills.map((skill) => {
+                const SkillIcon = skillIcons[skill] ?? Code2;
+                return (
+                  <span
+                    key={skill}
+                    className="flex items-center gap-2 px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-muted"
+                  >
+                    <SkillIcon size={14} />
+                    {skill}
+                  </span>
+                );
+              })}
             </div>
           </motion.div>
         ))}
