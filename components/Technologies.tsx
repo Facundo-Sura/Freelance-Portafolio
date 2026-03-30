@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 import { 
   Layout, 
   Server, 
-  Smartphone, 
-  Cloud, 
+  Cloud,
+  Database,
 } from "lucide-react";
 
 const techStack = [
-  { name: "Frontend", icon: Layout, skills: ["React", "Next.js", "Vue.js", "Tailwind CSS"] },
-  { name: "Backend", icon: Server, skills: ["Java", "Node.js", "Express", "Python", "MySQL", "PostgreSQL"] },
-  { name: "DevOps", icon: Cloud, skills: ["Docker", "AWS", "CI/CD", "GCP"] },
-  { name: "Mobile", icon: Smartphone, skills: ["React Native", "Webs Responsive"] },
+  { name: "Frontend", icon: Layout, skills: ["React", "Vite", "Next.js", "Vue.js", "Bootstrap", "Tailwind", "Bulma"] },
+  { name: "Backend", icon: Server, skills: ["Java", "Spring", "Node.js", "Express", "Python"] },
+  { name: "Database", icon: Database, skills: ["MySQL", "PostgreSQL", "Neon", "Supabase", "MongoDB"] },
+  { name: "DevOps", icon: Cloud, skills: ["Vercel", "Render", "AWS", "GCP", "Docker"] },
 ];
 
 const containerVariants = {
