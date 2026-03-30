@@ -30,12 +30,6 @@ const socialLinks = [
     color: "hover:bg-blue-700/20 hover:text-blue-700 hover:border-blue-700/50",
   },
   {
-    name: "Telegram",
-    icon: Send,
-    href: "https://t.me/FacundoSura",
-    color: "hover:bg-sky-400/20 hover:text-sky-400 hover:border-sky-400/50",
-  },
-  {
     name: "GitHub",
     icon: Github,
     href: "https://github.com/Facundo-Sura",
