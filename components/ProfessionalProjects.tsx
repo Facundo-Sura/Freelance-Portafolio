@@ -16,6 +16,14 @@ const proProjects = [
     Github: "https://github.com/Facundo-Sura/pcv.git"
   },
   {
+    title: "Portafolio creadora de contenido",
+    description: "Sitio web para portafolio de contenido, muestra proyectos, servicios y contacto.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/portafolio-aby-doro.jpg",
+    link: "https://portafolio-creativo.vercel.app/",
+    Github: "https://github.com/Facundo-Sura/Portafolio-Creativo.git"
+  },
+  {
     title: "Inmobiliaria Scotto",
     description: "Sitio web deInmobiliaria local autogestionable de propiedades, vehiculos y subastas.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "node.js", "express", "cloudinary", "neon-db"],
