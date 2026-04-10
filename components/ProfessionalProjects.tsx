@@ -8,6 +8,14 @@ import { ExternalLink, Github } from "lucide-react";
 
 const proProjects = [
   {
+    title: "Pintureria Caso Viejo",
+    description: "E-commerce para la pintureria Caso Viejo, muestra productos, permite comprar y permite contactar con el cliente.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "node.js", "express", "sequelize", "postgresql", "cloudinary", "nodemailer", "mercado pago"],
+    image: "/pintureria-caso-viejo.jpg",
+    link: "https://pintureria-caso-viejo.com.ar/",
+    Github: "https://github.com/Facundo-Sura/pcv.git"
+  },
+  {
     title: "Inmobiliaria Scotto",
     description: "Sitio web deInmobiliaria local autogestionable de propiedades, vehiculos y subastas.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "node.js", "express", "cloudinary", "neon-db"],
