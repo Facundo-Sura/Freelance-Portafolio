@@ -47,6 +47,14 @@ const proProjects = [
     link: "https://estudio-juridico-sura.vercel.app/",
     Github: "https://github.com/Facundo-Sura/estudio-juridico-sura.git"
   },
+  {
+    title: "Profesora Ieca",
+    description: "Sitio web para mostrar información sobre la profesora de educación abogacía Ieca, sus servicios y contacto.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/profesora-ieca.jpg",
+    link: "https://violeta-gomez.vercel.app/",
+    Github: "https://github.com/Facundo-Sura/Violeta-Gomez.git"
+  }
 ];
 
 export function ProfessionalProjects() {
